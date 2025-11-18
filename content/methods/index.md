@@ -2,46 +2,87 @@
 title: "Methods"
 ---
 
-## Statistical Methods & Areas of Expertise
+## My Approach to Statistical Modeling
 
-### **Regression & Classification**
-- Linear, logistic, multinomial, and ordinal (PO, PPO, adjacent-category) models  
-- Class imbalance handling, transformations, and sensitivity analyses  
-- Predictive performance evaluation using RMSE, log-likelihood, and cross-validation  
+My methods background is broad, but how I *use* methods matters more to me than the list of techniques.  
+Below I summarize not what I know, but **how I think about problems**.
 
-### **High-Dimensional Inference**
-- PCA and **Sparse PCA (NExOS algorithm)**  
-- K-means and hierarchical clustering  
-- Feature selection for large-scale time-series and behavioral data  
-- Applications to Digital Cages actigraphy data (millions of observations)
+---
 
-### **Semiparametric & Nonparametric Methods**
-- Generalized additive models (GAMs) using smoothing splines  
-- Shape-constrained estimation and interpretability-preserving structures  
-- Kernel-based diagnostics and graph-based goodness-of-fit  
+### **1. Diagnostics First**
+I design models from diagnostics backward.  
+Overlap, residuals, leverage, calibration, and identifiability determine model choice—not the other way around.
 
-### **Bayesian Modeling**
-- Hierarchical models in Stan  
-- Prior formulation, adaptive sampling, and parallel chains  
-- Posterior predictive checks, LOO-CV, and DIC  
+This came from working with cognitive impairment classification, where *model failure taught me the structure of the data*.
 
-### **Causal Inference**
-- Propensity score estimation (WeightIt)  
-- Overlap diagnostics & weight truncation  
-- Doubly robust AIPW and TMLE estimation  
-- Partial-overlap regime identification and trimming rules  
+---
 
-### **Latent Variable Models**
-- Confirmatory Factor Analysis (CFA) for cognitive domains  
-- Measurement invariance across education groups  
-- Structural modeling of adapted assessment batteries  
+### **2. Semiparametric Thinking**
+I gravitate toward methods that keep interpretability while allowing flexibility:
 
-### **Missing Data & Robust Estimation**
-- Structural missingness patterns in cognitive datasets  
-- MNAR considerations and sensitivity analyses  
-- Recoding, screening, and pipeline-based reproducibility  
+- GAMs  
+- shape-constrained estimation  
+- sparse PCA  
+- partial-proportional odds models  
 
-### **Statistical Computing**
-- Simulation of SDEs, GBM, and stochastic processes  
-- High-performance computation for PCA & MCMC  
-- Reproducible workflows in R Markdown and Python
+I like methods that refuse to pretend the world fits into simple parametric boxes.
+
+---
+
+### **3. High-Dimensional Structures**
+Working with Digital Cages data made me appreciate sparsity and clustering—not as machine learning tricks, but as **scientific tools for structure recovery**.
+
+I use:
+
+- PCA / Sparse PCA (NExOS)  
+- hierarchical clustering  
+- feature extraction for time-series signals  
+
+---
+
+### **4. Causal Inference as a Discipline of Skepticism**
+NHANES taught me that causal inference is 90% diagnostics, 10% estimation.
+
+My workflow always includes:
+
+- overlap checks  
+- truncation regimes  
+- AIPW vs TMLE triangulation  
+- sensitivity to positivity violations  
+
+---
+
+### **5. Bayesian Modeling with Engineering Discipline**
+I see Bayesian inference as modeling + computation:
+
+- prior specification  
+- model reparameterization  
+- MCMC stability (R-hat, ESS, divergences)  
+- LOO-CV & posterior predictive checks  
+
+The hierarchical work hour project solidified this computational mindset.
+
+---
+
+### **6. Measurement Modeling & Latent Structure**
+My applied work in cognitive aging requires:
+
+- CFA  
+- invariance testing  
+- domain scoring  
+- WLSMV modeling
+
+This shaped how I think about latent variables and empirical identifiability.
+
+---
+
+### **7. Reproducibility as a Method**
+Most of my projects involve full pipelines:
+- fixed seeds  
+- environment control  
+- knitted R Markdown / Quarto  
+- multi-step data engineering scripts  
+
+I aim for statistical analyses that can be reproduced **exactly**, not approximately.
+
+---
